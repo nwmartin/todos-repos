@@ -28,6 +28,9 @@ github.authenticate({
 
 app.get('/', function(req, res){
 
+  // TODO: This is a working monstrosity. Refactor.
+  // Also, async is rad.
+
   github.user.getOrgs({
     user: account.username
   }, function(error, orgs) {
