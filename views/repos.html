@@ -1,7 +1,16 @@
-<h1>¡Todas las solicitudes de extracción de su repo!</h1>
-<% org.repos.forEach( function(repo) { %>
-  <h2><%= repo.title %></h2>
-  <% repo.pullRequests.forEach( function(pullRequest) { %>
-    <a href="<%= pullRequest.url %>"><h3><%= pullRequest.title %></h3></a>
-  <% }); %>
-<% }) %>
+<html>
+  <head>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>¡Todas las solicitudes de extracción de su repo!</h1>
+    <% org.repos.forEach( function(repo) { %>
+      <h2><%= repo.title %></h2>
+      <% repo.pullRequests.forEach( function(pullRequest) { %>
+        <a href="<%= pullRequest.url %>"><h3><%= pullRequest.title %></h3></a>
+      <% }); %>
+    <% }) %>
+  </body>
+</html>
+
+
