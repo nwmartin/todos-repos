@@ -47,6 +47,8 @@ app.get('/', function(req, res){
             }
           });
 
+          // Create an array of functions to get pull requests for each repo to
+          // be executed in parallel.
           var getPullRequestsForRepos = _.map(org.repos, function(repo) {
             return function (callback) {
               github.pullRequests.getAll({
