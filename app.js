@@ -7,7 +7,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
 
 app.get('/', function(req, res){
-  res.render('hello', {});
+  res.render('repos', {});
 });
 
 app.listen(port);
