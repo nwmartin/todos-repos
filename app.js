@@ -30,9 +30,9 @@ app.get('/', function(req, res){
   }, function(error, orgs) {
     orgs.forEach( function(orgJson) {
       var org = new Org(orgJson);
-      if (org.title === 'RiparianData') {
+      if (account.org == org.title) {
         github.repos.getFromOrg({
-          org: org.title
+          org: account.org
         }, function(err, repos) {
           repos.forEach(function(repoJson) {
             var repo = new Repo(repoJson);
