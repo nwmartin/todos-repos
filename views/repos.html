@@ -3,13 +3,26 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   </head>
   <body>
-    <h1>¡Todas las solicitudes de extracción de su repo!</h1>
-    <% org.repos.forEach( function(repo) { %>
-      <h2><%= repo.title %></h2>
-      <% repo.pullRequests.forEach( function(pullRequest) { %>
-        <a href="<%= pullRequest.url %>"><h3><%= pullRequest.title %></h3></a>
-      <% }); %>
-    <% }) %>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">¡Todas las solicitudes de extracción de su repo!</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <% org.repos.forEach( function(repo) { %>
+        <div class="starter-template">
+          <h1><%= repo.title %></h1>
+          <% repo.pullRequests.forEach( function(pullRequest) { %>
+            <p class="lead"><a href="<%= pullRequest.url %>"><%= pullRequest.title %></a><p>
+          <% }); %>
+        </div>
+      <% }) %>
+    </div>
+
   </body>
 </html>
 
