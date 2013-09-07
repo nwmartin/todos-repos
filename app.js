@@ -43,9 +43,22 @@ app.get('/', function(req, res){
             }
           });
 
-          res.render('repos', {
-            org: org
+          var getPullRequestsForRepos = _.map(org.repos, function(repo) {
+            return function (callback) {
+              console.log(repo.title);
+              callback();
+            };
           });
+
+          console.log('parallel');
+
+          async.parallel(getPullRequestsForRepos, function(err) {
+            console.log('done!');
+
+            res.render('repos', {
+              org: org
+            });
+          })
 
         });
       }

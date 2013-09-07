@@ -1,14 +1,10 @@
 var org = function(json) {
   var self = this;
   self.title = json.login;
-  var repos = [];
+  self.repos = [];
 
   self.addRepo = function(repo) {
-    repos.push(repo);
-  }
-
-  self.getRepos = function() {
-    return repos;
+    self.repos.push(repo);
   }
 }
 
