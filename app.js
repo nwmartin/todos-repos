@@ -7,7 +7,12 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'html');
 
 app.get('/', function(req, res){
-  res.render('repos', {});
+  res.render('repos', {
+    repos: [
+      {title:'herp'},
+      {title:'derp'}
+    ]
+  });
 });
 
 app.listen(port);
