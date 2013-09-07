@@ -1,6 +1,6 @@
 {
   "username": "exampleUsername",
   "password": "examplePassword",
-  "includeOrgs": ["org1", "org2"],
+  "org": "OrgName",
   "includeRepos": ["repo1", "repo2"]
 }
