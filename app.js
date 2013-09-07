@@ -5,6 +5,7 @@ var async = require('async');
 var account = require('./account');
 var Org = require('./org').org;
 var Repo = require('./repo').repo;
+var PullRequest = require('./pullRequest').pullRequest;
 
 var port = 3001;
 
@@ -45,16 +46,19 @@ app.get('/', function(req, res){
 
           var getPullRequestsForRepos = _.map(org.repos, function(repo) {
             return function (callback) {
-              console.log(repo.title);
-              callback();
+              github.pullRequests.getAll({
+                user: org.title,
+                repo: repo.title
+              }, function(err, pullRequests) {
+                pullRequests.forEach(function(pullRequestJson) {
+                  repo.addPullRequest(new PullRequest(pullRequestJson));
+                })
+                callback();
+              });
             };
           });
 
-          console.log('parallel');
-
           async.parallel(getPullRequestsForRepos, function(err) {
-            console.log('done!');
-
             res.render('repos', {
               org: org
             });

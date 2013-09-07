@@ -3,9 +3,9 @@ var repo = function(json) {
   self.title = json.name;
   self.pullRequests = [];
 
-  self.addPullRequest = function(json) {
-
-  }
+  self.addPullRequest = function(pullRequest) {
+    self.pullRequests.push(pullRequest);
+  };
 }
 
 exports.repo = repo;
