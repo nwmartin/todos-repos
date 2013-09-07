@@ -1,4 +1,4 @@
 <h1>¡Todas las solicitudes de extracción de su repo!</h1>
-<% repos.forEach( function(repo) { %>
+<% org.getRepos().forEach( function(repo) { %>
   <h2><%= repo.title %></h2>
 <% }) %>
