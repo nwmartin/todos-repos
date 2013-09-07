@@ -35,7 +35,10 @@ app.get('/', function(req, res){
           org: org.title
         }, function(err, repos) {
           repos.forEach(function(repoJson) {
-            org.addRepo(new Repo(repoJson));
+            var repo = new Repo(repoJson);
+            if (_.contains(account.includeRepos, repo.title)) {
+              org.addRepo(new Repo(repoJson));
+            }
           });
 
           res.render('repos', {
