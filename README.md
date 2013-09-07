@@ -1,7 +1,7 @@
 Todos Repos
 ===========
 
-![alt text](https://github.com/nwmartin/todos-repos/blob/master/todos-repos.png "Todos Repos")
+![alt text](https://raw.github.com/nwmartin/todos-repos/master/todos-repos.png "Todos Repos")
 
 Setup
 -----
