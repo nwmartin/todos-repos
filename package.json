@@ -8,6 +8,7 @@
     "express": "3.3.8",
     "ejs": "0.8.4",
     "github": "0.1.10",
-    "underscore": "1.5.2"
+    "underscore": "1.5.2",
+    "async": "0.2.9"
   }
 }
