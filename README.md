@@ -12,3 +12,5 @@ Lastly, includeRepos should be a json array of repository names for which you de
 
 This runs on node and express. If you already have node installed, as well as npm, you should be able to run
 npm install in the root directory and all appropriate dependencies will be picked up.
+
+You should then be able to access the page at localhost:3001.
