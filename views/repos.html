@@ -20,11 +20,14 @@
 
     <div class="container">
       <% org.repos.forEach( function(repo) { %>
-        <div class="starter-template">
+        <div>
           <h1><%= repo.title %></h1>
           <% repo.pullRequests.forEach( function(pullRequest) { %>
             <p class="lead"><a href="<%= pullRequest.url %>"><%= pullRequest.title %></a><p>
           <% }); %>
+          <% if (repo.pullRequests.length == 0) { %>
+            <p class="lead">¡No tirar peticiones aquí! Qué suerte!<p>
+          <% } %>
         </div>
       <% }) %>
     </div>
